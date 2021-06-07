@@ -26,15 +26,15 @@ const Sider = () => {
             <Menu.Item key="g1_5">캐주얼</Menu.Item>
           </Menu.ItemGroup>
           <Menu.ItemGroup key="g2" title="패션잡화">
-            <Menu.Item key="g2_1">남성신발</Menu.Item>
-            <Menu.Item key="g2_2">여성가방</Menu.Item>
-            <Menu.Item key="g2_3">남성잡화</Menu.Item>
-            <Menu.Item key="g2_4">여성잡화</Menu.Item>
-            <Menu.Item key="g2_5">여성신발</Menu.Item>
-            <Menu.Item key="g2_6">남성신발</Menu.Item>
-            <Menu.Item key="g2_7">여행용 가방/소풍</Menu.Item>
-            <Menu.Item key="g2_8">주얼리/시계</Menu.Item>
-            <Menu.Item key="g2_9">헤어악세사리</Menu.Item>
+            <Menu.Item key="sub1_g2_1">남성신발</Menu.Item>
+            <Menu.Item key="sub1_g2_2">여성가방</Menu.Item>
+            <Menu.Item key="sub1_g2_3">남성잡화</Menu.Item>
+            <Menu.Item key="sub1_g2_4">여성잡화</Menu.Item>
+            <Menu.Item key="sub1_g2_5">여성신발</Menu.Item>
+            <Menu.Item key="sub1_g2_6">남성신발</Menu.Item>
+            <Menu.Item key="sub1_g2_7">여행용 가방/소풍</Menu.Item>
+            <Menu.Item key="sub1_g2_8">주얼리/시계</Menu.Item>
+            <Menu.Item key="sub1_g2_9">헤어악세사리</Menu.Item>
           </Menu.ItemGroup>
           <Menu.ItemGroup key="g4" title="출산/유아">
             <Menu.Item key="g4_1">임부복</Menu.Item>
@@ -69,10 +69,7 @@ const Sider = () => {
           <Menu.Item key="11">키치</Menu.Item>
 
           
-          <SubMenu key="sub3" title="Submenu">
-            <Menu.Item key="7">Option 7</Menu.Item>
-            <Menu.Item key="8">Option 8</Menu.Item>
-          </SubMenu>
+        
         </SubMenu>
         
       </Menu>

@@ -1,36 +1,39 @@
 import React from "react";
-import { Row, Col } from 'antd';
+import { Row, Col,Space } from 'antd';
 import styled from "styled-components";
+
+
 
 import Item from "./Card"
 const CardGroup = () =>{
 
     return (
         <Container>
-        <Row>
+        <Row style= {{margin:"20px"}}>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
         </Row>
-        <Row>
+        <Row style= {{margin:"20px"}}>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
         </Row>
-        <Row>
+        <Row style= {{margin:"20px"}}>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
         </Row>
-        <Row>
+        <Row style= {{margin:"20px"}}>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
           <Col span={6}><Item/></Col>
         </Row>
+        
       </Container>
     )
 }

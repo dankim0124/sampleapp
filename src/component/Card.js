@@ -1,6 +1,8 @@
 import { Card } from 'antd';
 import React from "react";
-const { Meta } = Card;
+import styled from "styled-components";
+
+
 
 const customCard = () => {
   <Card
@@ -13,3 +15,4 @@ const customCard = () => {
   }
 
 export default customCard;
+

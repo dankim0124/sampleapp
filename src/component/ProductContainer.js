@@ -20,7 +20,7 @@ const ProductContainer = () => {
         title="Cafe24 Display Network"
         backIcon="false"
         subTitle="CDN 테스트 페이지 , 상품 검색"
-        style = {{"margin-left":"40px"}}
+        style = {{"marginLeft":"40px"}}
       />
 
       <Content style={{ padding: "0 50px", display:"flex", flexDirection:"row" }}>

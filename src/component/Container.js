@@ -4,9 +4,7 @@ import styled from "styled-components";
 import { Layout, Menu, Breadcrumb, PageHeader, Divider } from "antd";
 import Space from "../material/Space";
 import CustomForm from "./customForm";
-import RadioGroup from "./Radio/RadioGroup";
 import CardGroup from "./Cards/CardGroup";
-import Slot from "../component/tags/Tags"
 
 import Sider from "./Side/Side";
 import Tags from "../component/tags/Tags";
@@ -22,7 +20,7 @@ const Container = () => {
         title="Cafe24 Display Network"
         backIcon="false"
         subTitle="CDN 테스트 페이지 , 숍 검색"
-        style = {{"margin-left":"40px"}}
+        style = {{"marginLeft":"40px"}}
       />
 
       <Content style={{ padding: "0 50px", display:"flex", flexDirection:"row" }}>
