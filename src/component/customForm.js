@@ -13,7 +13,7 @@ import {
 
 const { SubMenu } = Menu;
 
-const CustomForm = () => {
+const CustomForm = (props) => {
   const formStyle = {
     display: "flex",
     flexDirection: "row",
@@ -21,29 +21,56 @@ const CustomForm = () => {
     maxWidth: "800px",
   };
 
+  
+  const setSearchWord = props.setSearchWord;
+  const onSearch = props.onSearch;
+  const setCategory = props.setCategory;
+  const category = props.category;
+  
+
   return (
     <FormContainer>
       <Form style={formStyle}>
-        <Input name="검색" rules={[{ required: true }]}></Input>
-        <Button type="primary" htmlType="submit" style={{ marginLeft: "30px" }}>
+        <Input name="검색" rules={[{ required: true }]} onChange={e => {setSearchWord(e.target.value)}}></Input>
+        <Button type="primary" htmlType="submit" style={{ marginLeft: "30px" }} onClick={onSearch}>
           Submit
         </Button>
       </Form>
-      <SortingMenu />
+      <SortingMenu  setCategory ={setCategory}/>
     </FormContainer>
   );
 };
 
-const SortingMenu = () => {
+const SortingMenu = (props) => {
   const handleClick = (e) => {
-    console.log("click ", e);
+   let searchCategory = "";
+   if (e.key == "g1_1") {
+     searchCategory ="남성 속옷 언더웨어 잠옷 male";
+   } 
+   else if (e.key=="g1_2"){
+    searchCategory="남성 의류 남성의류 male"
+   }
+   else if (e.key == "g1_3"){
+    searchCategory ="여성 속옷 언더웨어 잠옷 female";
+   }
+   else if (e.key == "g1_4"){
+    searchCategory ="여성 의류 여성의류 female";
+   }
+   else if (e.key == "g1_5"){
+    searchCategory ="캐주얼 casual";
+   }
+   setCategory(searchCategory)
+   console.log(e.key)
   };
+  const setCategory = props.setCategory;
 
   return (
     <Menu
       style={{ background: "#f0f2f5" }}
       onClick={handleClick}
       mode="horizontal"
+      
+
     >
       <SubMenu key="sub-sorting" icon={<SettingOutlined />} title="Sorting">
         <Menu.Item key="1">가격순</Menu.Item>
@@ -54,9 +81,9 @@ const SortingMenu = () => {
         <Menu.Item key="5">주간</Menu.Item>
         <Menu.Item key="6">월간</Menu.Item>
       </SubMenu>
-      <SubMenu key="sub-category" icon={<SkinOutlined />} title="CDN category">
-        <Menu.ItemGroup key="g1" title="패션의류">
-          <Menu.Item key="g1_1">남성언더웨어/잠옷</Menu.Item>
+      <SubMenu key="sub-category" icon={<SkinOutlined />} title="CDN category" >
+        <Menu.ItemGroup key="g1" title="패션의류"  >
+          <Menu.Item key="g1_1"> 남성언더웨어/잠옷</Menu.Item>
           <Menu.Item key="g1_2">남성의류</Menu.Item>
           <Menu.Item key="g1_3">여성언더웨어/잠옷</Menu.Item>
           <Menu.Item key="g1_4">여성의류</Menu.Item>
