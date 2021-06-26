@@ -16,6 +16,12 @@ const { Content, Footer } = Layout;
 const Container = () => {
   const [searchWord, setSearchWord] = useState();
   const [category, setCategory] = useState();
+  const [hits, setHits] = useState();
+
+
+  useEffect(()=>{
+    console.log("hits changed: ", hits);
+  },[hits])
 
   const onSearch = () => {
     const searchQ = searchWord ? "?q=" + searchWord : "";
@@ -45,6 +51,8 @@ const Container = () => {
       } else {
         console.log(response);
         console.log(body);
+        setHits(body.hits.hits);
+
       }
     });
   };
