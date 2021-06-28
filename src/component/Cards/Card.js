@@ -1,6 +1,6 @@
 import {  Card } from "antd";
 
-const Item = () => {
+const Item = ({hit}) => {
     const { Meta } = Card;
   return (
     <Card
@@ -9,11 +9,11 @@ const Item = () => {
       cover={
         <img
           alt="example"
-          src="https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png"
+          src={hit ? hit._source.basicImage :"https://os.alipayobjects.com/rmsportal/QBnOOoLaAfKPirc.png" }
         />
       }
     >
-      <Meta title="Europe Street beat" description="www.instagram.com" />
+      <Meta title={hit? hit._source.prd_name :"Europe Street beat"} description={hit? hit._source.mall_id :"Europe Street beat"} />
     </Card>
   );
 };

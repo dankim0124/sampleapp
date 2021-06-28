@@ -18,32 +18,31 @@ const Container = () => {
   const [category, setCategory] = useState();
   const [hits, setHits] = useState();
 
-
-  useEffect(()=>{
+  useEffect(() => {
     console.log("hits changed: ", hits);
-  },[hits])
+  }, [hits]);
 
   const onSearch = () => {
-    const searchQ = searchWord ? "?q=" + searchWord : "";
+    const searchQ = searchWord ;
     const searchForm = category
       ? {
-          query: { match: { "category": "Men's" } },
+          query: {
+            bool: {
+              filter: [{ match: { prd_name: searchWord } }],
+              should: [{ match: { prd_cate_name: category } }],
+            },
+          },
         }
       : {};
     alert("search: " + searchWord + "\ncategory : " + category);
 
-    const options = {
-      uri: "http://localhost:9200/kibana_sample_data_ecommerce/_search",
-      method: "POST",
-      json: searchForm
-    };
+    console.log(searchForm);
 
-    const options2 = {
-      uri: "http://localhost:9200/kibana_sample_data_ecommerce/_search",
-      method: "GET",
-      json: true,
+    const options = {
+      uri: "http://211.37.172.11:9200/test.allproduct/_search",
+      method: "POST",
+      json: searchForm,
     };
-    
 
     request.post(options, (error, response, body) => {
       if (error) {
@@ -52,7 +51,7 @@ const Container = () => {
         console.log(response);
         console.log(body);
         setHits(body.hits.hits);
-
+        
       }
     });
   };
@@ -79,7 +78,7 @@ const Container = () => {
             category={category}
           />
           <Space size="50" />
-          <CardGroup />
+          <CardGroup hits = {hits} />
         </Main>
       </Content>
       <Footer style={{ textAlign: "center" }}>

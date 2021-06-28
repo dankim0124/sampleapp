@@ -48,13 +48,13 @@ const SortingMenu = (props) => {
      searchCategory ="남성 속옷 언더웨어 잠옷 male";
    } 
    else if (e.key=="g1_2"){
-    searchCategory="남성 의류 남성의류 male"
+    searchCategory="남성 의류  male"
    }
    else if (e.key == "g1_3"){
     searchCategory ="여성 속옷 언더웨어 잠옷 female";
    }
    else if (e.key == "g1_4"){
-    searchCategory ="여성 의류 여성의류 female";
+    searchCategory ="여성 의류 female";
    }
    else if (e.key == "g1_5"){
     searchCategory ="캐주얼 casual";
